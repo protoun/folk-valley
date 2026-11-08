@@ -55,6 +55,28 @@
       }
     );
 
+    const trademark = document.querySelector(".trademark-notice");
+
+if (trademark) {
+    trademark.animate(
+        [
+            {
+                opacity: 0,
+                transform: "translateY(100%)"
+            },
+            {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        ],
+        {
+            duration: 1000,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "forwards"
+        }
+    );
+}
+
     return Promise.all([logoLift.finished, dateReveal.finished]);
   }).catch(() => {
     // Ignore animation cancellation (for example, if the page is closed).
